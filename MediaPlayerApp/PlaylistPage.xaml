@@ -1,0 +1,92 @@
+﻿<Page
+    x:Class="MediaPlayerApp.PlaylistPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MediaPlayerApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/MainpagBackground.jpg"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+        <ScrollViewer
+            VerticalScrollBarVisibility="Hidden"
+            >
+            <StackPanel Name="PlaylistSongsPanel">
+                <TextBlock Foreground="White"
+                       TextAlignment="Center"
+                       >Playlist:</TextBlock>
+                <TextBlock Name="PlaylistSongs" Foreground="White" FontSize="12"></TextBlock>
+            </StackPanel>
+        </ScrollViewer>
+
+
+        <MediaElement x:Name="Video1" 
+                          Grid.Row="0"
+                          Grid.Column="1"
+                          Margin="5"
+                          Height="600"
+                          Width="600"
+                          AutoPlay="False"  
+                          CurrentStateChanged="media_CurrentStateChanged"
+                          PosterSource="Images/SelectedSongPoster.png"
+                          AreTransportControlsEnabled="True"
+                          >
+        </MediaElement>
+        <TextBlock
+            Name="Songinfo"
+            Grid.Column="1"
+            Height="50" 
+            Margin="0,5,-10,665" 
+            Foreground="White" 
+            FocusVisualPrimaryBrush="White" 
+            TextAlignment="Center"
+            >
+        </TextBlock>
+        <AppBarButton
+            Name="AddSong"
+            Click="AddSong_Click" 
+            Grid.Column="1"
+            Margin="0,0,0,0"
+            Icon="Add"
+            Label="Add Song"
+            Background="#7F69B4E8"
+            HorizontalAlignment="Right"
+            ></AppBarButton>
+        <AppBarButton
+            Name="Next1Song"
+            Click="NextSong_Click" 
+            Grid.Column="1"
+            Margin="0,60,0,0"
+            Icon="Next"
+            Label="Next"
+            Background="#7F69B4E8"
+            HorizontalAlignment="Right"
+            ></AppBarButton>
+        <AppBarButton
+            Name="Previous1Song"
+            Click="Previous1Song_Click" 
+            Grid.Column="1"
+            Margin="0,120,0,0"
+            Icon="Previous"
+            Label="Previous"
+            Background="#7F69B4E8"
+            HorizontalAlignment="Right"
+            ></AppBarButton>
+
+
+    </Grid>
+</Page>
